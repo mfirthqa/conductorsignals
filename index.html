@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conductor Signals — Algorithmic Crypto Trading Signals</title>
+  <meta name="description" content="Real-time algorithmic crypto trading signals from a multi-strategy bot running 24/7 on Hyperliquid. 5 strategies, one subscription.">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --border: #1e1e2e;
+      --text: #e4e4e7;
+      --muted: #71717a;
+      --accent: #22c55e;
+      --accent2: #3b82f6;
+      --red: #ef4444;
+      --gold: #eab308;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── Hero ─────────────────────────────────── */
+    .hero {
+      text-align: center;
+      padding: 80px 0 60px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 span { color: var(--accent); }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 36px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+    }
+
+    .btn-primary:hover {
+      background: #16a34a;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(34, 197, 94, 0.25);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--muted);
+      transform: translateY(-1px);
+    }
+
+    /* ── Stats bar ────────────────────────────── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 80px;
+    }
+
+    .stat {
+      background: var(--surface);
+      padding: 24px;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .stat-value.green { color: var(--accent); }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── Sections ─────────────────────────────── */
+    section { margin-bottom: 80px; }
+
+    .section-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-desc {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+
+    /* ── Strategy cards ───────────────────────── */
+    .strategies {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+    }
+
+    .strategy-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: border-color 0.2s;
+    }
+
+    .strategy-card:hover { border-color: var(--muted); }
+
+    .strategy-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .strategy-name {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .strategy-desc {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* ── How it works ─────────────────────────── */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+
+    .step {
+      position: relative;
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: rgba(34, 197, 94, 0.15);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .step h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .step p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* ── Signal preview ───────────────────────── */
+    .signal-preview {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 14px;
+      line-height: 1.8;
+      max-width: 420px;
+    }
+
+    .signal-preview .green { color: var(--accent); }
+    .signal-preview .red { color: var(--red); }
+    .signal-preview .dim { color: var(--muted); }
+    .signal-preview .bold { font-weight: 700; }
+
+    .signals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 20px;
+    }
+
+    /* ── Pricing ──────────────────────────────── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .pricing-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+      position: relative;
+    }
+
+    .pricing-card.featured {
+      border-color: var(--accent);
+      box-shadow: 0 0 40px rgba(34, 197, 94, 0.08);
+    }
+
+    .pricing-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: #000;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .pricing-name {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .pricing-price {
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .pricing-price span {
+      font-size: 16px;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .pricing-desc {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .pricing-features li {
+      font-size: 14px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pricing-features li:last-child { border: none; }
+
+    .check { color: var(--accent); }
+    .cross { color: var(--muted); }
+
+    .pricing-card .btn { width: 100%; justify-content: center; }
+
+    /* ── FAQ ───────────────────────────────────── */
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+
+    .faq-q {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .faq-a {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* ── Footer ────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* ── Mobile ────────────────────────────────── */
+    @media (max-width: 640px) {
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .hero { padding: 48px 0 40px; }
+      .signals-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="container">
+    <section class="hero">
+      <div class="hero-badge">⚡ LIVE — TRADING 24/7</div>
+      <h1>Algorithmic Crypto Signals.<br><span>Zero Emotion.</span></h1>
+      <p>5 strategies. One bot. Real-time trading signals from the Conductor — an automated system trading Hyperliquid around the clock.</p>
+      <div class="hero-buttons">
+        <a href="https://buy.stripe.com/6oUdR85dOdNOfHK4y72go00" class="btn btn-primary">Subscribe — £10/month</a>
+        <a href="https://t.me/conductorsignals" class="btn btn-secondary">📢 Free Channel</a>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value">5</div>
+        <div class="stat-label">Strategies</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">24/7</div>
+        <div class="stat-label">Uptime</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">21</div>
+        <div class="stat-label">Coins Tracked</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value green">Live</div>
+        <div class="stat-label">Status</div>
+      </div>
+    </div>
+
+    <!-- Strategies -->
+    <section>
+      <div class="section-label">Strategies</div>
+      <h2 class="section-title">Five Strategies. One System.</h2>
+      <p class="section-desc">The Conductor reads the market and deploys the right strategy for current conditions — automatically.</p>
+      <div class="strategies">
+        <div class="strategy-card">
+          <div class="strategy-icon">📈</div>
+          <div class="strategy-name">Strong Trend</div>
+          <div class="strategy-desc">Rides confirmed momentum with ADX, EMA alignment, and volume confirmation. The workhorse.</div>
+        </div>
+        <div class="strategy-card">
+          <div class="strategy-icon">💥</div>
+          <div class="strategy-name">Breakout</div>
+          <div class="strategy-desc">Catches range breaks with volume spikes. Enters close to the breakout level — no chasing.</div>
+        </div>
+        <div class="strategy-card">
+          <div class="strategy-icon">🔄</div>
+          <div class="strategy-name">Choppy</div>
+          <div class="strategy-desc">Mean reversion at Bollinger Band extremes. Buys oversold, sells overbought in ranging markets.</div>
+        </div>
+        <div class="strategy-card">
+          <div class="strategy-icon">📉</div>
+          <div class="strategy-name">Breakdown</div>
+          <div class="strategy-desc">Shorts the relief bounce after sharp drops. Waits for the dead cat bounce, then fades it.</div>
+        </div>
+        <div class="strategy-card">
+          <div class="strategy-icon">🔀</div>
+          <div class="strategy-name">Divergent</div>
+          <div class="strategy-desc">Macro-level plays when BTC diverges from altcoins. Catches rotations early.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Signal Preview -->
+    <section>
+      <div class="section-label">What You Get</div>
+      <h2 class="section-title">Clear, Actionable Signals</h2>
+      <p class="section-desc">Every signal includes everything you need to take the trade — or skip it.</p>
+      <div class="signals-grid">
+        <div class="signal-preview">
+          <div><span class="green bold">🟢 LONG INJ</span> @ $5.5514</div>
+          <br>
+          <div>Strategy: <span class="dim">STRONG_TREND</span></div>
+          <div>Leverage: 4x</div>
+          <div>SL: $5.4829 | TP: $5.7160</div>
+          <div>Macro: <span class="dim">CHOPPY</span></div>
+          <br>
+          <div class="dim">⏱ 2026-09-17 07:58 UTC</div>
+        </div>
+        <div class="signal-preview">
+          <div><span class="green bold">✅ CLOSED INJ</span> LONG</div>
+          <br>
+          <div>Entry: $5.5514 → Exit: $5.7160</div>
+          <div>PnL: <span class="green bold">+$7.55</span> (+2.96%)</div>
+          <div>Duration: 8h 14m</div>
+          <div>Exit: Take Profit</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section>
+      <div class="section-label">How It Works</div>
+      <h2 class="section-title">Up and Running in 2 Minutes</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Subscribe</h3>
+          <p>Pay £10/month via Stripe. Enter your Telegram username at checkout.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Get Access</h3>
+          <p>DM @Conductor_signals_bot on Telegram. Send /invite to get your private channel link.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Receive Signals</h3>
+          <p>Get real-time entry and exit signals the moment trades execute. Zero delay.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>Trade</h3>
+          <p>Use the signals on your own exchange. Your keys, your account, your risk management.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section>
+      <div class="section-label">Pricing</div>
+      <h2 class="section-title">Simple Pricing. No Hidden Fees.</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-name">Free</div>
+          <div class="pricing-price">£0 <span>/ month</span></div>
+          <div class="pricing-desc">See what the Conductor is doing — with a delay.</div>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> All trade signals</li>
+            <li><span class="check">✓</span> Entry, SL & TP levels</li>
+            <li><span class="check">✓</span> Strategy & macro context</li>
+            <li><span class="cross">✗</span> <span style="color: var(--muted)">1 hour delay</span></li>
+          </ul>
+          <a href="https://t.me/conductorsignals" class="btn btn-secondary">Join Free Channel</a>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-tag">Most Popular</div>
+          <div class="pricing-name">Pro</div>
+          <div class="pricing-price">£10 <span>/ month</span></div>
+          <div class="pricing-desc">Real-time signals — zero delay.</div>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> All trade signals</li>
+            <li><span class="check">✓</span> Entry, SL & TP levels</li>
+            <li><span class="check">✓</span> Strategy & macro context</li>
+            <li><span class="check">✓</span> <strong>Real-time — zero delay</strong></li>
+          </ul>
+          <a href="https://buy.stripe.com/6oUdR85dOdNOfHK4y72go00" class="btn btn-primary">Subscribe Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Common Questions</h2>
+      <div class="faq-item">
+        <div class="faq-q">What exchange does the Conductor trade on?</div>
+        <div class="faq-a">The Conductor trades on Hyperliquid, a decentralised perpetuals exchange. Signals include coin, direction, leverage, and exact SL/TP levels — you can use them on any exchange that lists the same pairs.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you trade my account?</div>
+        <div class="faq-a">No. We provide signals only. You trade on your own exchange with your own account. We never have access to your funds or API keys.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What coins does it track?</div>
+        <div class="faq-a">21 coins including ETH, SOL, DOGE, LINK, SUI, APT, INJ, DOT, ADA, and more. The watchlist is actively managed.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How many signals per day?</div>
+        <div class="faq-a">It varies with market conditions. Typically 2–8 signals per day. The bot only trades when conditions match — no forcing trades in dead markets.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I cancel anytime?</div>
+        <div class="faq-a">Yes. Cancel your subscription anytime from Stripe. No lock-in, no questions asked.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is this financial advice?</div>
+        <div class="faq-a">No. Conductor Signals is a software tool that provides trade information. It is not financial advice. You are responsible for your own trading decisions and risk management.</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>Conductor Signals — algorithmic trading signals, 24/7.</p>
+      <p style="margin-top: 8px;">
+        <a href="https://t.me/conductorsignals">Telegram</a> ·
+        <a href="https://buy.stripe.com/6oUdR85dOdNOfHK4y72go00">Subscribe</a>
+      </p>
+      <p style="margin-top: 16px; font-size: 11px;">
+        Not financial advice. Trading crypto involves significant risk. Past performance does not guarantee future results.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
