@@ -560,6 +560,22 @@
           </div>
         </div>
       </div>
+
+      <div class="perf-grid" style="margin-top: 16px;">
+        <div class="perf-card">
+          <div class="perf-header">Daily Performance (7d)</div>
+          <div class="perf-rows" id="daily-pnl">
+            <div class="perf-row dim">Loading...</div>
+          </div>
+        </div>
+
+        <div class="perf-card">
+          <div class="perf-header">Monthly Performance</div>
+          <div class="perf-rows" id="monthly-pnl">
+            <div class="perf-row dim">Loading...</div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Strategies -->
@@ -745,8 +761,8 @@
       setText('po-trades', s.totalTrades);
       setText('po-wl', s.wins + ' / ' + s.losses);
       setText('po-wr', s.winRate + '%');
-      setText('po-avgw', '+$' + s.avgWin.toFixed(2));
-      setText('po-avgl', '-$' + Math.abs(s.avgLoss).toFixed(2));
+      setText('po-avgw', '+' + s.avgWin.toFixed(2) + '%');
+      setText('po-avgl', s.avgLoss.toFixed(2) + '%');
       setText('po-pf', s.profitFactor + 'x');
       setText('po-streak', s.bestWinStreak + ' wins');
 
@@ -761,7 +777,7 @@
           const isWin = t.pnl > 0;
           const dirClass = t.dir === 'Long' ? 'long' : 'short';
           const pnlClass = isWin ? 'green' : 'red';
-          const pnlStr = isWin ? '+$' + t.pnl.toFixed(2) : '-$' + Math.abs(t.pnl).toFixed(2);
+          const pnlStr = (t.pnl >= 0 ? '+' : '') + t.pnl.toFixed(2) + '%';
           const time = t.time ? t.time.slice(5, 16).replace('T', ' ') : '';
           return `<div class="trade-row">
             <span class="trade-coin">${t.coin}</span>
@@ -779,7 +795,7 @@
       if (s.topCoins && s.topCoins.length > 0) {
         tc.innerHTML = s.topCoins.map(c => {
           const pnlClass = c.pnl >= 0 ? 'green' : 'red';
-          const pnlStr = c.pnl >= 0 ? '+$' + c.pnl.toFixed(2) : '-$' + Math.abs(c.pnl).toFixed(2);
+          const pnlStr = (c.pnl >= 0 ? '+' : '') + c.pnl.toFixed(2) + '%';
           return `<div class="perf-row">
             <span class="bold">${c.coin}</span>
             <span class="dim">${c.trades} trades (${c.winRate}% WR)</span>
@@ -793,11 +809,41 @@
       if (s.weeklyPnl && s.weeklyPnl.length > 0) {
         wp.innerHTML = s.weeklyPnl.map(w => {
           const pnlClass = w.pnl >= 0 ? 'green' : 'red';
-          const pnlStr = w.pnl >= 0 ? '+$' + w.pnl.toFixed(2) : '-$' + Math.abs(w.pnl).toFixed(2);
+          const pnlStr = (w.pnl >= 0 ? '+' : '') + w.pnl.toFixed(2) + '%';
           const wr = w.trades > 0 ? Math.round(w.wins / w.trades * 100) + '%' : '-';
           return `<div class="perf-row">
             <span>w/c ${w.week.slice(5)}</span>
             <span class="dim">${w.trades} trades (${wr})</span>
+            <span class="${pnlClass}">${pnlStr}</span>
+          </div>`;
+        }).join('');
+      }
+
+      // Daily PnL
+      const dp = document.getElementById('daily-pnl');
+      if (s.dailyPnl && s.dailyPnl.length > 0) {
+        dp.innerHTML = s.dailyPnl.map(d => {
+          const pnlClass = d.pnl >= 0 ? 'green' : 'red';
+          const pnlStr = (d.pnl >= 0 ? '+' : '') + d.pnl.toFixed(2) + '%';
+          const wr = d.trades > 0 ? Math.round(d.wins / d.trades * 100) + '%' : '-';
+          return `<div class="perf-row">
+            <span>${d.date.slice(5)}</span>
+            <span class="dim">${d.trades} trades (${wr})</span>
+            <span class="${pnlClass}">${pnlStr}</span>
+          </div>`;
+        }).join('');
+      }
+
+      // Monthly PnL
+      const mp = document.getElementById('monthly-pnl');
+      if (s.monthlyPnl && s.monthlyPnl.length > 0) {
+        mp.innerHTML = s.monthlyPnl.map(m => {
+          const pnlClass = m.pnl >= 0 ? 'green' : 'red';
+          const pnlStr = (m.pnl >= 0 ? '+' : '') + m.pnl.toFixed(2) + '%';
+          const wr = m.trades > 0 ? Math.round(m.wins / m.trades * 100) + '%' : '-';
+          return `<div class="perf-row">
+            <span>${m.month}</span>
+            <span class="dim">${m.trades} trades (${wr})</span>
             <span class="${pnlClass}">${pnlStr}</span>
           </div>`;
         }).join('');
