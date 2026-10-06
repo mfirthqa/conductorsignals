@@ -1,19 +1,25 @@
 {
-  "updated": "2026-10-06T20:54:47.085Z",
-  "totalTrades": 268,
+  "updated": "2026-10-06T21:00:36.370Z",
+  "totalTrades": 269,
   "wins": 75,
-  "losses": 193,
-  "winRate": 28,
-  "totalReturnPct": -106.63,
+  "losses": 194,
+  "winRate": 27.9,
+  "totalReturnPct": -108.28,
   "avgWin": 5.52,
-  "avgLoss": -2.7,
+  "avgLoss": -2.69,
   "profitFactor": 2.05,
   "bestWinStreak": 3,
   "currentStreak": {
-    "count": 5,
+    "count": 6,
     "type": "loss"
   },
   "recentTrades": [
+    {
+      "coin": "AVAX",
+      "dir": "Long",
+      "pnl": -1.65,
+      "time": "2026-10-06T21:00:33"
+    },
     {
       "coin": "NEAR",
       "dir": "Short",
@@ -67,12 +73,6 @@
       "dir": "Long",
       "pnl": 0.26,
       "time": "2026-10-06T02:20:32"
-    },
-    {
-      "coin": "FIL",
-      "dir": "Long",
-      "pnl": -6.49,
-      "time": "2026-10-06T01:50:25"
     }
   ],
   "topCoins": [
@@ -152,10 +152,10 @@
     },
     {
       "date": "2026-10-05",
-      "pnl": -6.24,
-      "trades": 12,
+      "pnl": -7.89,
+      "trades": 13,
       "wins": 4,
-      "losses": 8
+      "losses": 9
     }
   ],
   "weeklyPnl": [
@@ -182,10 +182,10 @@
     },
     {
       "week": "2026-09-29",
-      "pnl": -32.41,
-      "trades": 47,
+      "pnl": -34.06,
+      "trades": 48,
       "wins": 11,
-      "losses": 36
+      "losses": 37
     }
   ],
   "monthlyPnl": [
