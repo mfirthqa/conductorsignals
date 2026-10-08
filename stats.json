@@ -1,19 +1,25 @@
 {
-  "updated": "2026-10-08T16:29:35.418Z",
-  "totalTrades": 276,
+  "updated": "2026-10-08T18:25:34.129Z",
+  "totalTrades": 277,
   "wins": 78,
-  "losses": 198,
-  "winRate": 28.3,
-  "totalReturnPct": -103.42,
+  "losses": 199,
+  "winRate": 28.2,
+  "totalReturnPct": -104.62,
   "avgWin": 5.54,
-  "avgLoss": -2.71,
+  "avgLoss": -2.7,
   "profitFactor": 2.05,
   "bestWinStreak": 3,
   "currentStreak": {
     "count": 1,
-    "type": "win"
+    "type": "loss"
   },
   "recentTrades": [
+    {
+      "coin": "HYPE",
+      "dir": "Short",
+      "pnl": -1.2,
+      "time": "2026-10-08T18:25:30"
+    },
     {
       "coin": "JUP",
       "dir": "Short",
@@ -67,12 +73,6 @@
       "dir": "Long",
       "pnl": -5.62,
       "time": "2026-10-06T21:43:35"
-    },
-    {
-      "coin": "AVAX",
-      "dir": "Long",
-      "pnl": -1.65,
-      "time": "2026-10-06T21:00:33"
     }
   ],
   "topCoins": [
@@ -145,26 +145,26 @@
     },
     {
       "date": "2026-10-06",
-      "pnl": -11.68,
-      "trades": 8,
-      "wins": 1,
+      "pnl": -1.14,
+      "trades": 10,
+      "wins": 3,
       "losses": 7
     },
     {
       "date": "2026-10-07",
-      "pnl": 10.82,
-      "trades": 6,
-      "wins": 3,
-      "losses": 3
+      "pnl": -0.92,
+      "trades": 5,
+      "wins": 1,
+      "losses": 4
     }
   ],
   "weeklyPnl": [
     {
       "week": "2026-09-10",
-      "pnl": -4.52,
-      "trades": 50,
+      "pnl": 2.69,
+      "trades": 48,
       "wins": 14,
-      "losses": 36
+      "losses": 34
     },
     {
       "week": "2026-09-17",
@@ -182,10 +182,10 @@
     },
     {
       "week": "2026-10-01",
-      "pnl": 12.31,
-      "trades": 25,
+      "pnl": 11.11,
+      "trades": 26,
       "wins": 9,
-      "losses": 16
+      "losses": 17
     }
   ],
   "monthlyPnl": [
