@@ -1,19 +1,25 @@
 {
-  "updated": "2026-10-08T07:19:03.180Z",
-  "totalTrades": 274,
+  "updated": "2026-10-08T08:54:14.072Z",
+  "totalTrades": 275,
   "wins": 77,
-  "losses": 197,
-  "winRate": 28.1,
-  "totalReturnPct": -110.16,
+  "losses": 198,
+  "winRate": 28,
+  "totalReturnPct": -111.33,
   "avgWin": 5.51,
   "avgLoss": -2.71,
-  "profitFactor": 2.03,
+  "profitFactor": 2.04,
   "bestWinStreak": 3,
   "currentStreak": {
-    "count": 2,
+    "count": 3,
     "type": "loss"
   },
   "recentTrades": [
+    {
+      "coin": "DOT",
+      "dir": "Short",
+      "pnl": -1.17,
+      "time": "2026-10-08T08:54:11"
+    },
     {
       "coin": "MINA",
       "dir": "Short",
@@ -67,12 +73,6 @@
       "dir": "Short",
       "pnl": -1.11,
       "time": "2026-10-06T20:54:45"
-    },
-    {
-      "coin": "HYPE",
-      "dir": "Short",
-      "pnl": -0.78,
-      "time": "2026-10-06T18:50:22"
     }
   ],
   "topCoins": [
@@ -145,17 +145,17 @@
     },
     {
       "date": "2026-10-06",
-      "pnl": -12.13,
-      "trades": 10,
-      "wins": 2,
+      "pnl": -7.11,
+      "trades": 11,
+      "wins": 3,
       "losses": 8
     },
     {
       "date": "2026-10-07",
-      "pnl": 7.16,
+      "pnl": 0.98,
       "trades": 6,
-      "wins": 3,
-      "losses": 3
+      "wins": 2,
+      "losses": 4
     }
   ],
   "weeklyPnl": [
@@ -168,24 +168,24 @@
     },
     {
       "week": "2026-09-17",
-      "pnl": -47.73,
-      "trades": 86,
-      "wins": 24,
-      "losses": 62
+      "pnl": -46.27,
+      "trades": 89,
+      "wins": 25,
+      "losses": 64
     },
     {
       "week": "2026-09-24",
-      "pnl": -62.44,
-      "trades": 117,
-      "wins": 31,
-      "losses": 86
+      "pnl": -63.9,
+      "trades": 114,
+      "wins": 30,
+      "losses": 84
     },
     {
       "week": "2026-10-01",
-      "pnl": 6.82,
-      "trades": 24,
+      "pnl": 5.65,
+      "trades": 25,
       "wins": 9,
-      "losses": 15
+      "losses": 16
     }
   ],
   "monthlyPnl": [
