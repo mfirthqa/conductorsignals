@@ -1,19 +1,25 @@
 {
-  "updated": "2026-10-09T11:47:15.683Z",
-  "totalTrades": 285,
+  "updated": "2026-10-09T14:00:18.770Z",
+  "totalTrades": 286,
   "wins": 79,
-  "losses": 206,
-  "winRate": 27.7,
-  "totalReturnPct": -131.95,
+  "losses": 207,
+  "winRate": 27.6,
+  "totalReturnPct": -133.39,
   "avgWin": 5.48,
-  "avgLoss": -2.74,
+  "avgLoss": -2.73,
   "profitFactor": 2,
   "bestWinStreak": 3,
   "currentStreak": {
-    "count": 6,
+    "count": 7,
     "type": "loss"
   },
   "recentTrades": [
+    {
+      "coin": "ETH",
+      "dir": "Long",
+      "pnl": -1.44,
+      "time": "2026-10-09T14:00:16"
+    },
     {
       "coin": "ADA",
       "dir": "Short",
@@ -67,12 +73,6 @@
       "dir": "Short",
       "pnl": -1.2,
       "time": "2026-10-08T18:25:30"
-    },
-    {
-      "coin": "JUP",
-      "dir": "Short",
-      "pnl": 7.91,
-      "time": "2026-10-08T16:29:21"
     }
   ],
   "topCoins": [
@@ -152,26 +152,26 @@
     },
     {
       "date": "2026-10-08",
-      "pnl": -20.62,
-      "trades": 10,
+      "pnl": -22.06,
+      "trades": 11,
       "wins": 2,
-      "losses": 8
+      "losses": 9
     }
   ],
   "weeklyPnl": [
     {
       "week": "2026-09-11",
-      "pnl": 27.15,
-      "trades": 53,
-      "wins": 17,
-      "losses": 36
+      "pnl": 33.4,
+      "trades": 55,
+      "wins": 18,
+      "losses": 37
     },
     {
       "week": "2026-09-18",
-      "pnl": -74.43,
-      "trades": 82,
-      "wins": 21,
-      "losses": 61
+      "pnl": -80.69,
+      "trades": 80,
+      "wins": 20,
+      "losses": 60
     },
     {
       "week": "2026-09-25",
@@ -182,10 +182,10 @@
     },
     {
       "week": "2026-10-02",
-      "pnl": -16.22,
-      "trades": 34,
+      "pnl": -17.66,
+      "trades": 35,
       "wins": 10,
-      "losses": 24
+      "losses": 25
     }
   ],
   "monthlyPnl": [
