@@ -1,19 +1,25 @@
 {
-  "updated": "2026-10-10T08:05:03.752Z",
-  "totalTrades": 287,
+  "updated": "2026-10-10T08:23:47.054Z",
+  "totalTrades": 288,
   "wins": 79,
-  "losses": 208,
-  "winRate": 27.5,
-  "totalReturnPct": -134.73,
+  "losses": 209,
+  "winRate": 27.4,
+  "totalReturnPct": -135.99,
   "avgWin": 5.48,
-  "avgLoss": -2.73,
+  "avgLoss": -2.72,
   "profitFactor": 2.01,
   "bestWinStreak": 3,
   "currentStreak": {
-    "count": 8,
+    "count": 9,
     "type": "loss"
   },
   "recentTrades": [
+    {
+      "coin": "ONDO",
+      "dir": "Long",
+      "pnl": -1.26,
+      "time": "2026-10-10T08:23:44"
+    },
     {
       "coin": "INJ",
       "dir": "Long",
@@ -67,20 +73,14 @@
       "dir": "Short",
       "pnl": 0.42,
       "time": "2026-10-08T20:13:51"
-    },
-    {
-      "coin": "LIT",
-      "dir": "Short",
-      "pnl": -4.71,
-      "time": "2026-10-08T20:02:12"
     }
   ],
   "topCoins": [
     {
       "coin": "ONDO",
-      "trades": 6,
-      "winRate": 50,
-      "pnl": 19.18
+      "trades": 7,
+      "winRate": 43,
+      "pnl": 17.92
     },
     {
       "coin": "ETHFI",
@@ -145,14 +145,14 @@
     },
     {
       "date": "2026-10-08",
-      "pnl": 1.26,
-      "trades": 5,
+      "pnl": -3.68,
+      "trades": 6,
       "wins": 2,
-      "losses": 3
+      "losses": 4
     },
     {
       "date": "2026-10-09",
-      "pnl": -25.82,
+      "pnl": -22.15,
       "trades": 8,
       "wins": 0,
       "losses": 8
@@ -168,24 +168,24 @@
     },
     {
       "week": "2026-09-19",
-      "pnl": -95.84,
-      "trades": 76,
+      "pnl": -99.28,
+      "trades": 77,
       "wins": 17,
-      "losses": 59
+      "losses": 60
     },
     {
       "week": "2026-09-26",
-      "pnl": -59.71,
-      "trades": 112,
+      "pnl": -56.27,
+      "trades": 111,
       "wins": 31,
-      "losses": 81
+      "losses": 80
     },
     {
       "week": "2026-10-03",
-      "pnl": -19,
-      "trades": 36,
+      "pnl": -20.26,
+      "trades": 37,
       "wins": 10,
-      "losses": 26
+      "losses": 27
     }
   ],
   "monthlyPnl": [
