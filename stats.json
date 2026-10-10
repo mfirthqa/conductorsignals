@@ -1,19 +1,25 @@
 {
-  "updated": "2026-10-10T08:23:47.054Z",
-  "totalTrades": 288,
+  "updated": "2026-10-10T08:27:30.652Z",
+  "totalTrades": 289,
   "wins": 79,
-  "losses": 209,
-  "winRate": 27.4,
-  "totalReturnPct": -135.99,
+  "losses": 210,
+  "winRate": 27.3,
+  "totalReturnPct": -137.28,
   "avgWin": 5.48,
-  "avgLoss": -2.72,
-  "profitFactor": 2.01,
+  "avgLoss": -2.71,
+  "profitFactor": 2.02,
   "bestWinStreak": 3,
   "currentStreak": {
-    "count": 9,
+    "count": 10,
     "type": "loss"
   },
   "recentTrades": [
+    {
+      "coin": "AVAX",
+      "dir": "Long",
+      "pnl": -1.29,
+      "time": "2026-10-10T08:27:28"
+    },
     {
       "coin": "ONDO",
       "dir": "Long",
@@ -67,12 +73,6 @@
       "dir": "Long",
       "pnl": -4.93,
       "time": "2026-10-09T08:23:28"
-    },
-    {
-      "coin": "TRX",
-      "dir": "Short",
-      "pnl": 0.42,
-      "time": "2026-10-08T20:13:51"
     }
   ],
   "topCoins": [
@@ -152,10 +152,10 @@
     },
     {
       "date": "2026-10-09",
-      "pnl": -22.15,
-      "trades": 8,
+      "pnl": -23.45,
+      "trades": 9,
       "wins": 0,
-      "losses": 8
+      "losses": 9
     }
   ],
   "weeklyPnl": [
@@ -169,23 +169,23 @@
     {
       "week": "2026-09-19",
       "pnl": -99.28,
-      "trades": 77,
-      "wins": 17,
-      "losses": 60
+      "trades": 79,
+      "wins": 18,
+      "losses": 61
     },
     {
       "week": "2026-09-26",
-      "pnl": -56.27,
-      "trades": 111,
-      "wins": 31,
-      "losses": 80
+      "pnl": -56.28,
+      "trades": 109,
+      "wins": 30,
+      "losses": 79
     },
     {
       "week": "2026-10-03",
-      "pnl": -20.26,
-      "trades": 37,
+      "pnl": -21.55,
+      "trades": 38,
       "wins": 10,
-      "losses": 27
+      "losses": 28
     }
   ],
   "monthlyPnl": [
