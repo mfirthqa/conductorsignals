@@ -1,19 +1,25 @@
 {
-  "updated": "2026-10-10T20:42:38.712Z",
-  "totalTrades": 295,
+  "updated": "2026-10-10T21:34:38.997Z",
+  "totalTrades": 296,
   "wins": 81,
-  "losses": 214,
-  "winRate": 27.5,
-  "totalReturnPct": -140.43,
+  "losses": 215,
+  "winRate": 27.4,
+  "totalReturnPct": -145.08,
   "avgWin": 5.41,
-  "avgLoss": -2.7,
-  "profitFactor": 2,
+  "avgLoss": -2.71,
+  "profitFactor": 1.99,
   "bestWinStreak": 3,
   "currentStreak": {
-    "count": 2,
+    "count": 3,
     "type": "loss"
   },
   "recentTrades": [
+    {
+      "coin": "INJ",
+      "dir": "Long",
+      "pnl": -4.65,
+      "time": "2026-10-10T21:34:20"
+    },
     {
       "coin": "INJ",
       "dir": "Short",
@@ -67,12 +73,6 @@
       "dir": "Long",
       "pnl": -1.29,
       "time": "2026-10-10T08:27:28"
-    },
-    {
-      "coin": "ONDO",
-      "dir": "Long",
-      "pnl": -1.26,
-      "time": "2026-10-10T08:23:44"
     }
   ],
   "topCoins": [
@@ -110,31 +110,31 @@
   "dailyPnl": [
     {
       "date": "2026-10-03",
-      "pnl": -1.62,
-      "trades": 2,
-      "wins": 0,
+      "pnl": 11.92,
+      "trades": 3,
+      "wins": 1,
       "losses": 2
     },
     {
       "date": "2026-10-04",
-      "pnl": 13.54,
-      "trades": 1,
-      "wins": 1,
+      "pnl": 0,
+      "trades": 0,
+      "wins": 0,
       "losses": 0
     },
     {
       "date": "2026-10-05",
-      "pnl": -5.13,
-      "trades": 11,
+      "pnl": -7.89,
+      "trades": 13,
       "wins": 4,
-      "losses": 7
+      "losses": 9
     },
     {
       "date": "2026-10-06",
-      "pnl": 5.25,
-      "trades": 7,
+      "pnl": 8.01,
+      "trades": 5,
       "wins": 3,
-      "losses": 4
+      "losses": 2
     },
     {
       "date": "2026-10-07",
@@ -152,10 +152,10 @@
     },
     {
       "date": "2026-10-09",
-      "pnl": -14.25,
-      "trades": 11,
+      "pnl": -18.9,
+      "trades": 12,
       "wins": 2,
-      "losses": 9
+      "losses": 10
     }
   ],
   "weeklyPnl": [
@@ -182,10 +182,10 @@
     },
     {
       "week": "2026-10-03",
-      "pnl": -31.91,
-      "trades": 46,
+      "pnl": -36.56,
+      "trades": 47,
       "wins": 12,
-      "losses": 34
+      "losses": 35
     }
   ],
   "monthlyPnl": [
