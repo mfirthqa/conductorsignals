@@ -1,19 +1,25 @@
 {
-  "updated": "2026-10-11T11:45:40.229Z",
-  "totalTrades": 297,
+  "updated": "2026-10-11T12:11:34.882Z",
+  "totalTrades": 298,
   "wins": 81,
-  "losses": 216,
-  "winRate": 27.3,
-  "totalReturnPct": -147.71,
+  "losses": 217,
+  "winRate": 27.2,
+  "totalReturnPct": -150.87,
   "avgWin": 5.41,
   "avgLoss": -2.71,
   "profitFactor": 1.99,
   "bestWinStreak": 3,
   "currentStreak": {
-    "count": 4,
+    "count": 5,
     "type": "loss"
   },
   "recentTrades": [
+    {
+      "coin": "FIL",
+      "dir": "Short",
+      "pnl": -3.16,
+      "time": "2026-10-11T12:11:32"
+    },
     {
       "coin": "ONDO",
       "dir": "Short",
@@ -67,12 +73,6 @@
       "dir": "Long",
       "pnl": -2.19,
       "time": "2026-10-10T10:46:04"
-    },
-    {
-      "coin": "MINA",
-      "dir": "Short",
-      "pnl": -4.73,
-      "time": "2026-10-10T09:58:04"
     }
   ],
   "topCoins": [
@@ -138,24 +138,24 @@
     },
     {
       "date": "2026-10-08",
-      "pnl": -14.53,
-      "trades": 9,
+      "pnl": -20.62,
+      "trades": 10,
       "wins": 2,
-      "losses": 7
-    },
-    {
-      "date": "2026-10-09",
-      "pnl": -19.57,
-      "trades": 8,
-      "wins": 0,
       "losses": 8
     },
     {
-      "date": "2026-10-10",
-      "pnl": -9.49,
+      "date": "2026-10-09",
+      "pnl": -13.48,
       "trades": 7,
+      "wins": 0,
+      "losses": 7
+    },
+    {
+      "date": "2026-10-10",
+      "pnl": -12.65,
+      "trades": 8,
       "wins": 2,
-      "losses": 5
+      "losses": 6
     }
   ],
   "weeklyPnl": [
@@ -182,10 +182,10 @@
     },
     {
       "week": "2026-10-04",
-      "pnl": -39.2,
-      "trades": 48,
+      "pnl": -42.36,
+      "trades": 49,
       "wins": 12,
-      "losses": 36
+      "losses": 37
     }
   ],
   "monthlyPnl": [
