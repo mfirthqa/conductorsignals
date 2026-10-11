@@ -1,19 +1,25 @@
 {
-  "updated": "2026-10-11T12:11:34.882Z",
-  "totalTrades": 298,
+  "updated": "2026-10-11T12:35:18.956Z",
+  "totalTrades": 299,
   "wins": 81,
-  "losses": 217,
-  "winRate": 27.2,
-  "totalReturnPct": -150.87,
+  "losses": 218,
+  "winRate": 27.1,
+  "totalReturnPct": -155.04,
   "avgWin": 5.41,
-  "avgLoss": -2.71,
+  "avgLoss": -2.72,
   "profitFactor": 1.99,
   "bestWinStreak": 3,
   "currentStreak": {
-    "count": 5,
+    "count": 6,
     "type": "loss"
   },
   "recentTrades": [
+    {
+      "coin": "ARB",
+      "dir": "Long",
+      "pnl": -4.17,
+      "time": "2026-10-11T12:34:47"
+    },
     {
       "coin": "FIL",
       "dir": "Short",
@@ -67,12 +73,6 @@
       "dir": "Long",
       "pnl": -1.23,
       "time": "2026-10-10T11:20:14"
-    },
-    {
-      "coin": "SUI",
-      "dir": "Long",
-      "pnl": -2.19,
-      "time": "2026-10-10T10:46:04"
     }
   ],
   "topCoins": [
@@ -101,10 +101,10 @@
       "pnl": 10.45
     },
     {
-      "coin": "ARB",
-      "trades": 11,
-      "winRate": 36,
-      "pnl": 10.02
+      "coin": "TRX",
+      "trades": 10,
+      "winRate": 60,
+      "pnl": 8.18
     }
   ],
   "dailyPnl": [
@@ -152,26 +152,26 @@
     },
     {
       "date": "2026-10-10",
-      "pnl": -12.65,
-      "trades": 8,
+      "pnl": -16.82,
+      "trades": 9,
       "wins": 2,
-      "losses": 6
+      "losses": 7
     }
   ],
   "weeklyPnl": [
     {
       "week": "2026-09-13",
-      "pnl": 19.85,
-      "trades": 51,
+      "pnl": 18.2,
+      "trades": 52,
       "wins": 19,
-      "losses": 32
+      "losses": 33
     },
     {
       "week": "2026-09-20",
-      "pnl": -74.27,
-      "trades": 100,
+      "pnl": -72.62,
+      "trades": 99,
       "wins": 32,
-      "losses": 68
+      "losses": 67
     },
     {
       "week": "2026-09-27",
@@ -182,10 +182,10 @@
     },
     {
       "week": "2026-10-04",
-      "pnl": -42.36,
-      "trades": 49,
+      "pnl": -46.52,
+      "trades": 50,
       "wins": 12,
-      "losses": 37
+      "losses": 38
     }
   ],
   "monthlyPnl": [
