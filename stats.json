@@ -1,19 +1,25 @@
 {
-  "updated": "2026-10-11T23:24:11.987Z",
-  "totalTrades": 300,
-  "wins": 83,
+  "updated": "2026-10-12T00:30:57.635Z",
+  "totalTrades": 301,
+  "wins": 84,
   "losses": 217,
-  "winRate": 27.7,
-  "totalReturnPct": -124.71,
-  "avgWin": 5.59,
+  "winRate": 27.9,
+  "totalReturnPct": -121.23,
+  "avgWin": 5.56,
   "avgLoss": -2.71,
-  "profitFactor": 2.06,
+  "profitFactor": 2.05,
   "bestWinStreak": 3,
   "currentStreak": {
     "count": 1,
-    "type": "loss"
+    "type": "win"
   },
   "recentTrades": [
+    {
+      "coin": "UNI",
+      "dir": "Long",
+      "pnl": 3.49,
+      "time": "2026-10-12T00:30:55"
+    },
     {
       "coin": "ETH",
       "dir": "Short",
@@ -67,12 +73,6 @@
       "dir": "Long",
       "pnl": -0.18,
       "time": "2026-10-10T20:40:40"
-    },
-    {
-      "coin": "NEAR",
-      "dir": "Long",
-      "pnl": 1.77,
-      "time": "2026-10-10T20:25:56"
     }
   ],
   "topCoins": [
@@ -109,82 +109,82 @@
   ],
   "dailyPnl": [
     {
-      "date": "2026-10-04",
-      "pnl": 7.29,
-      "trades": 1,
-      "wins": 1,
-      "losses": 0
-    },
-    {
       "date": "2026-10-05",
-      "pnl": -20.8,
-      "trades": 13,
-      "wins": 3,
-      "losses": 10
+      "pnl": 4.85,
+      "trades": 2,
+      "wins": 1,
+      "losses": 1
     },
     {
       "date": "2026-10-06",
+      "pnl": -18.36,
+      "trades": 12,
+      "wins": 3,
+      "losses": 9
+    },
+    {
+      "date": "2026-10-07",
       "pnl": 11.78,
       "trades": 5,
       "wins": 3,
       "losses": 2
     },
     {
-      "date": "2026-10-07",
+      "date": "2026-10-08",
       "pnl": -3.36,
       "trades": 6,
       "wins": 2,
       "losses": 4
     },
     {
-      "date": "2026-10-08",
+      "date": "2026-10-09",
       "pnl": -24.49,
       "trades": 7,
       "wins": 0,
       "losses": 7
     },
     {
-      "date": "2026-10-09",
+      "date": "2026-10-10",
       "pnl": -18.9,
       "trades": 12,
       "wins": 2,
       "losses": 10
     },
     {
-      "date": "2026-10-10",
-      "pnl": 14.03,
-      "trades": 6,
-      "wins": 2,
+      "date": "2026-10-11",
+      "pnl": 17.52,
+      "trades": 7,
+      "wins": 3,
       "losses": 4
     }
   ],
   "weeklyPnl": [
     {
-      "week": "2026-09-13",
-      "pnl": 6.83,
-      "trades": 49,
+      "week": "2026-09-14",
+      "pnl": 27.33,
+      "trades": 48,
       "wins": 18,
-      "losses": 31
+      "losses": 30
     },
     {
-      "week": "2026-09-20",
+      "week": "2026-09-21",
       "pnl": -97.76,
       "trades": 106,
       "wins": 31,
       "losses": 75
     },
     {
-      "week": "2026-09-27",
+      "week": "2026-09-28",
       "pnl": -29.34,
       "trades": 74,
       "wins": 17,
       "losses": 57
     },
     {
-      "week": "2026-10-04",
-      "pnl": -34.45,
-      "trades": 50,
-      "wins": 13,
+      "week": "2026-10-05",
+      "pnl": -30.96,
+      "trades": 51,
+      "wins": 14,
       "losses": 37
     }
   ],
