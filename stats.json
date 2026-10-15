@@ -1,19 +1,31 @@
 {
-  "updated": "2026-10-15T21:08:10.478Z",
-  "totalTrades": 277,
-  "wins": 81,
-  "losses": 196,
-  "winRate": 29.2,
-  "totalReturnPct": -82.6,
-  "avgWin": 5.11,
-  "avgLoss": -2.53,
-  "profitFactor": 2.02,
+  "updated": "2026-10-15T21:20:29.500Z",
+  "totalTrades": 279,
+  "wins": 82,
+  "losses": 197,
+  "winRate": 29.4,
+  "totalReturnPct": -83.9,
+  "avgWin": 5.07,
+  "avgLoss": -2.54,
+  "profitFactor": 2,
   "bestWinStreak": 4,
   "currentStreak": {
     "count": 1,
-    "type": "win"
+    "type": "loss"
   },
   "recentTrades": [
+    {
+      "coin": "INJ",
+      "dir": "Short",
+      "pnl": -3.19,
+      "time": "2026-10-15T21:20:27"
+    },
+    {
+      "coin": "ARB",
+      "dir": "Short",
+      "pnl": 1.89,
+      "time": "2026-10-15T21:08:07"
+    },
     {
       "coin": "ONDO",
       "dir": "Short",
@@ -61,18 +73,6 @@
       "dir": "Short",
       "pnl": 10.91,
       "time": "2026-10-12T23:38:29"
-    },
-    {
-      "coin": "APT",
-      "dir": "Short",
-      "pnl": 10.85,
-      "time": "2026-10-12T14:39:37"
-    },
-    {
-      "coin": "NEAR",
-      "dir": "Long",
-      "pnl": -5.24,
-      "time": "2026-10-12T06:15:37"
     }
   ],
   "topCoins": [
@@ -96,9 +96,9 @@
     },
     {
       "coin": "ARB",
-      "trades": 12,
-      "winRate": 33,
-      "pnl": 13.78
+      "trades": 13,
+      "winRate": 38,
+      "pnl": 15.67
     },
     {
       "coin": "TRX",
@@ -152,10 +152,10 @@
     },
     {
       "date": "2026-10-14",
-      "pnl": 1.92,
-      "trades": 2,
-      "wins": 1,
-      "losses": 1
+      "pnl": 0.62,
+      "trades": 4,
+      "wins": 2,
+      "losses": 2
     }
   ],
   "weeklyPnl": [
@@ -182,10 +182,10 @@
     },
     {
       "week": "2026-10-08",
-      "pnl": 4.14,
-      "trades": 36,
-      "wins": 10,
-      "losses": 26
+      "pnl": 2.84,
+      "trades": 38,
+      "wins": 11,
+      "losses": 27
     }
   ],
   "monthlyPnl": [
